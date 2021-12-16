@@ -16,7 +16,7 @@ fn main() {
         fuel, position
     );
 
-    let fuel_cost: Vec<i32> = (min..=max).map(|p| (1..=p).sum()).collect();
+    let fuel_cost: Vec<i32> = (0..=max).map(|p| (1..=p).sum()).collect();
 
     let (fuel, position) = (min..=max)
         .map(|p1| {
