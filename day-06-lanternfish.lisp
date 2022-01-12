@@ -1,7 +1,7 @@
 (defparameter *spawn-cycle-begin-day* 6)
 (defparameter *total-days* 8)
 
-(defun parse-input (file-path)
+(defun get-input (file-path)
   "Convert comma-separated integers to a list of integers."
   (with-open-file (stream file-path)
     (let ((string (read-line stream)))
@@ -28,7 +28,7 @@
 (defun count-lanternfish (state) (reduce '+ state))
 
 (defparameter *lanternfish*
-  (make-lanternfish-state (parse-input "day-06-lanternfish/input")))
+  (make-lanternfish-state (get-input "day-06-lanternfish/input")))
 
 (format t "There would be ~a laternfish after 80 days.~%"
         (count-lanternfish (simulate-lanternfish *lanternfish* 80)))
